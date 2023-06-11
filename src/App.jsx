@@ -1,48 +1,61 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import {useState} from "react"
+import reactLogo from "./assets/react.svg"
+import viteLogo from "/vite.svg"
+import "./App.css"
 
 function App() {
   const [count, setCount] = useState(0)
 
-  const design = {
-    color: "skyblue",
-    padding: "10px",
-    border: "1px solid yellow",
-    margin: "10px"
-  }
-
-  const Employe = props => (
-    <div style={design}>
-      <h3>{props.name}</h3>
-      <p>{props.occupation}</p>
-      <p>{props.location}</p>
-    </div>
-  )
-
-  const products = [
-    {name: "JavaScript", description: "A programming language", price: "00"}
-  ]
-
-  // const productStyle = {
-  //   height: "300px",
-  //   width: this.height,
-  //   border: "1px solid gray",
+  // const item = [
+  //   {name: "JavaScript", description: "A programming language", price: "00"},
+  //   {name: "Java", description: "A programming language", price: "00"},
+  //   {name: "Python", description: "A programming language", price: "00"},
+  //   {name: "PHP", description: "A programming language", price: "00"}
+  // ]
+  
+  // const design = {
+  //   color: "skyblue",
+  //   padding: "10px",
+  //   border: "1px solid yellow",
   //   borderRadias: "5px",
-  //   backgroundColor: "light gray",
-  //   color: "black",
-  //   float: "left"
+  //   float: "left",
+  //   margin: "10px"
   // }
 
-  // const Product = props => (
-  //   <div style={productStyle}>
-  //     <h5>{props.product.name}</h5>
-  //     <p>{props.product.description}</p>
-  //     <h4>${props.product.price}</h4>
-  //     <button>Buy Now</button>
-  //   </div>
-  // )
+  // const Product = props => {
+  //   const {name, description, price} = props.productsInfo
+  //   return (
+  //     <div style={design}>
+  //       <h3>{name}</h3>
+  //       <p>{description}</p>
+  //       <h4>{price}</h4>
+  //       <button>Buy Now</button>
+  //     </div>
+  //   )
+  // }
+  const friends = [
+    {name: "Ratul", age: "14", room: "8th"},
+    {name: "Morsalin", age: "16", room: "9th"},
+    {name: "Mehedi", age: "15", room: "9th"},
+    {name: "Rashed", age: "unknown", room: "Web Developer"},
+    {name: "Jamshed", age: "unknown", room: "Web Developer"}
+  ]
+
+  function Dost(props) {
+    const {name, age, room} = props.info
+    return (
+      <div style={{
+        float: "left",
+        margin: "10px",
+        border: "1px solid yellow",
+        padding: "10px"
+      }}>
+        <p>{name}</p>
+        <p>{age}</p>
+        <p>{room}</p>
+      </div>
+    )
+  }
 
   return (
     <>
@@ -55,12 +68,17 @@ function App() {
         </a>
       </div>
       <h1>React-World</h1>
-      {/* <Product product={products[0]}></Product> */}
 
-      <Employe name="Md Rahat Hossen Antor" location="Dhaka, Bangladesh" occupation="Web Developer"></Employe>
-      <Employe name="Morsalin Ahmed" location="Dhaka, Bangladesh" occupation="Student"></Employe>
-      <Employe name="Tawsif Ahmed Adib" location="Dhaka, Bangladesh" occupation="Student"></Employe>
-      <Employe name="Mehedi Hasan Ratul" location="Dhaka, Bangladesh" occupation="Student"></Employe>
+      {/* {item.map(data => <Product productsInfo={data}></Product>)} */}
+      
+      {/* {friends.map(firendName => <Dost name={firendName}></Dost>)} */}
+
+      {/* <Dost info={friends[0]}></Dost>
+      <Dost info={friends[1]}></Dost>
+      <Dost info={friends[2]}></Dost>
+      <Dost info={friends[3]}></Dost> */}
+
+      {friends.map(data => <Dost info={data}></Dost>)}
     </>
   )
 }
