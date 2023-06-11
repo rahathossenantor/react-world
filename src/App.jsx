@@ -6,10 +6,43 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
 
-  const user = {
-    name: "Md Rahat Hossen Antor",
-    age: 18
+  const design = {
+    color: "skyblue",
+    padding: "10px",
+    border: "1px solid yellow",
+    margin: "10px"
   }
+
+  const Employe = props => (
+    <div style={design}>
+      <h3>{props.name}</h3>
+      <p>{props.occupation}</p>
+      <p>{props.location}</p>
+    </div>
+  )
+
+  const products = [
+    {name: "JavaScript", description: "A programming language", price: "00"}
+  ]
+
+  // const productStyle = {
+  //   height: "300px",
+  //   width: this.height,
+  //   border: "1px solid gray",
+  //   borderRadias: "5px",
+  //   backgroundColor: "light gray",
+  //   color: "black",
+  //   float: "left"
+  // }
+
+  // const Product = props => (
+  //   <div style={productStyle}>
+  //     <h5>{props.product.name}</h5>
+  //     <p>{props.product.description}</p>
+  //     <h4>${props.product.price}</h4>
+  //     <button>Buy Now</button>
+  //   </div>
+  // )
 
   return (
     <>
@@ -22,12 +55,12 @@ function App() {
         </a>
       </div>
       <h1>React-World</h1>
-      <p>Hello! I'm {user.name}, and I'm {user.age} years old.</p>
-      {/* <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div> */}
+      {/* <Product product={products[0]}></Product> */}
+
+      <Employe name="Md Rahat Hossen Antor" location="Dhaka, Bangladesh" occupation="Web Developer"></Employe>
+      <Employe name="Morsalin Ahmed" location="Dhaka, Bangladesh" occupation="Student"></Employe>
+      <Employe name="Tawsif Ahmed Adib" location="Dhaka, Bangladesh" occupation="Student"></Employe>
+      <Employe name="Mehedi Hasan Ratul" location="Dhaka, Bangladesh" occupation="Student"></Employe>
     </>
   )
 }
